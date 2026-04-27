@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const AllCategory = async ({ allCategory, activeId }) => {
@@ -10,15 +11,19 @@ const AllCategory = async ({ allCategory, activeId }) => {
       <div>
         <ul className="flex flex-col gap-3 items-center">
           {allCategory.map((category) => (
-            <li
+            <Link
+              href={`/category/${category.category_id}`}
               key={category.category_id}
-              className={`
-              text-xl py-3
-              ${activeId === category.category_id ? "px-12 bg-[#E7E7E7] rounded-sm text-[#403F3F] font-semibold" : "text-[#9F9F9F] font-medium"}
-              `}
             >
-              {category.category_name}
-            </li>
+              <li
+                className={`
+              text-xl py-3 px-12
+              ${activeId === category.category_id ? "btn h-13 border-none shadow-none  bg-[#E7E7E7] rounded-sm text-[#403F3F] font-semibold" : "text-[#9F9F9F] font-medium"}
+              `}
+              >
+                {category.category_name}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

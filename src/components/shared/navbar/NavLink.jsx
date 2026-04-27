@@ -14,7 +14,7 @@ const NavLink = () => {
         <Link
           href={"/"}
           className={`
-          ${pathname === "/" ? activeClass : inactiveClass}
+          ${pathname === "/" || pathname.startsWith("/category") ? activeClass : inactiveClass}
           `}
         >
           Home
