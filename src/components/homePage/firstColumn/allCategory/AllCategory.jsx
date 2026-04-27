@@ -3,9 +3,9 @@ import React from "react";
 const AllCategory = async ({ allCategory, activeId }) => {
   return (
     <div>
-      <h2 className="mb-5 text-[#403F3F] text-xl font-semibold">
+      <h5 className="mb-5 text-[#403F3F] text-xl font-semibold">
         All Category
-      </h2>
+      </h5>
 
       <div>
         <ul className="flex flex-col gap-3 items-center">
