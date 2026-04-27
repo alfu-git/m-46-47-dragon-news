@@ -49,9 +49,15 @@ const Navbar = () => {
 
           <div className="navbar-end">
             <div className="flex gap-2.5 items-center">
-              <Image src={UserLogo} width={41} height={41} alt="User logo" />
+              <Image
+                src={UserLogo}
+                width={40}
+                height={40}
+                alt="User logo"
+                className="w-10 h-10"
+              />
 
-              <button className="btn border-none shadow-none bg-[#403F3F] px-10 h-11 text-white text-xl font-semibold">
+              <button className="btn border-none shadow-none bg-[#403F3F] sm:px-10 h-11 text-white text-lg sm:text-xl font-semibold">
                 Login
               </button>
             </div>
