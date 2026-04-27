@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-const NewsDetails = () => {
-  return (
-    <div>
-      news details page
-    </div>
-  );
+const NewsDetails = async ({ params }) => {
+  const { id } = await params;
+
+  return <div>news details page: {id}</div>;
 };
 
 export default NewsDetails;
