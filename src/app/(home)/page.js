@@ -2,6 +2,7 @@ import AllCategory from "@/components/homePage/firstColumn/allCategory/AllCatego
 import AllNews from "@/components/homePage/secondColumn/AllNews";
 import FindSection from "@/components/homePage/thirdColumn/FindSection";
 import LoginSection from "@/components/homePage/thirdColumn/LoginSection";
+import QZone from "@/components/homePage/thirdColumn/QZone";
 
 const getAllCategory = async () => {
   const res = await fetch(
@@ -28,6 +29,7 @@ export default async function Home() {
         <div className="col-span-3">
           <LoginSection />
           <FindSection />
+          <QZone />
         </div>
       </div>
     </section>
