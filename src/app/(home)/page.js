@@ -1,5 +1,6 @@
 import AllCategory from "@/components/homePage/firstColumn/allCategory/AllCategory";
 import AllNews from "@/components/homePage/secondColumn/AllNews";
+import FindSection from "@/components/homePage/thirdColumn/FindSection";
 import LoginSection from "@/components/homePage/thirdColumn/LoginSection";
 
 const getAllCategory = async () => {
@@ -26,6 +27,7 @@ export default async function Home() {
 
         <div className="col-span-3">
           <LoginSection />
+          <FindSection />
         </div>
       </div>
     </section>
