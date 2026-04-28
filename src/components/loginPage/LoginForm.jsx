@@ -14,7 +14,6 @@ const LoginForm = () => {
     console.log(data);
   };
 
-
   return (
     <div className="px-4 py-10 sm:py-15 lg:w-188 lg:mx-auto lg:p-19 bg-white rounded-md shadow">
       <h4 className="mb-12.5 text-[#403F3F] text-4xl font-semibold text-center">
@@ -55,7 +54,7 @@ const LoginForm = () => {
               className="input w-full h-16 p-5 bg-[#F3F3F3] border-none rounded-md placeholder:text-[#9F9F9F]"
               placeholder="Enter your password"
             />
-            
+
             {errors.password && (
               <p className="label text-red-500">{errors.password.message}</p>
             )}
