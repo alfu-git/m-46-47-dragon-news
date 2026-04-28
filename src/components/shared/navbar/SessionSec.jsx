@@ -4,10 +4,18 @@ import Image from "next/image";
 import Link from "next/link";
 import UserLogo from "@/assets/user.png";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 const SessionSec = () => {
+  const router = useRouter();
+
   const { data: session, isPending } = authClient.useSession();
   const user = session?.user;
+
+  const handleLogoutBtn = async () => {
+    await authClient.signOut();
+    router.push("/");
+  };
 
   const spinner = (
     <span className="mx-10 loading loading-ring loading-xl"></span>
@@ -31,7 +39,7 @@ const SessionSec = () => {
 
       {user ? (
         <button
-          onClick={async () => await authClient.signOut()}
+          onClick={handleLogoutBtn}
           className="btn border-none shadow-none bg-[#403F3F] sm:px-10 h-11 text-white text-lg sm:text-xl font-semibold"
         >
           Logout
