@@ -1,5 +1,5 @@
 import Headline from "@/components/headline/Headline";
-import Header from "@/components/shared/Header";
+import Header from "@/components/shared/header/Header";
 import Navbar from "@/components/shared/navbar/Navbar";
 import React from "react";
 
