@@ -7,6 +7,18 @@ import QZone from "@/components/homePage/thirdColumn/QZone";
 import { getAllCategory, getNewsByCategoryId } from "@/lib/dataFetch";
 import BlueBG from "@/components/homePage/thirdColumn/BlueBG";
 
+export const generateMetadata = async ({ params }) => {
+  const { id } = await params;
+
+  const allCategory = await getAllCategory();
+  const category = allCategory?.find((ctg) => ctg.category_id === id);
+
+  return {
+    title: `Dragon News | ${category?.category_name}`,
+    description: "Dragon news page by news category",
+  };
+};
+
 const PageByCategory = async ({ params }) => {
   const { id } = await params;
 

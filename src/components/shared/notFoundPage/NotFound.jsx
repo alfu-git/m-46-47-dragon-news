@@ -37,8 +37,9 @@ export default function NotFound() {
             className="inline-flex items-center gap-2 bg-stone-800 text-white px-6 py-3 rounded-sm font-medium hover:bg-stone-700 transition-colors"
           >
             <Home className="w-4 h-4" />
-            Back to Headlines
+            Back to Home
           </Link>
+
           <Link
             href="/"
             className="inline-flex items-center gap-2 border-2 border-stone-300 text-stone-700 px-6 py-3 rounded-sm font-medium hover:border-stone-400 hover:bg-stone-100 transition-colors"

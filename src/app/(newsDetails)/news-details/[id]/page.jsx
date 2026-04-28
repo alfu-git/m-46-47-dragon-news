@@ -1,18 +1,32 @@
 import FindSection from "@/components/homePage/thirdColumn/FindSection";
 import LoginSection from "@/components/homePage/thirdColumn/LoginSection";
 import QZone from "@/components/homePage/thirdColumn/QZone";
-import { getNewsById } from "@/lib/dataFetch";
+import { getAllCategory, getNewsById } from "@/lib/dataFetch";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiArrowLeft } from "react-icons/fi";
 
+export const generateMetadata = async ({ params }) => {
+  const { id } = await params;
+
+  const news = await getNewsById(id);
+  const allCategory = await getAllCategory();
+
+  const expectedCategory = allCategory.find(
+    (ctg) => ctg.category_id === news.category_id,
+  );
+
+  return {
+    title: `${expectedCategory.category_name} | ${news.title}`,
+    description: news.details,
+  };
+};
+
 const NewsDetails = async ({ params }) => {
   const { id } = await params;
 
   const news = await getNewsById(id);
-  console.log(news);
-
   return (
     <section className="mb-20">
       <div className="grid grid-cols-12 gap-6">
