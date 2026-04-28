@@ -1,17 +1,40 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
+import { authClient } from "@/lib/auth-client";
 
 const LoginForm = () => {
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const handleFormSubmit = (data) => {
-    console.log(data);
+  const handleFormSubmit = async (data) => {
+    const { email, password } = data;
+
+    setLoading(true);
+
+    const { data: res, error } = await authClient.signIn.email({
+      email: email,
+      password: password,
+      rememberMe: true,
+      callbackURL: "/",
+    });
+
+    setLoading(false);
+
+    if (error) {
+      alert(error.message);
+      return;
+    }
+
+    if (res) {
+      alert("Login Successful!");
+    }
   };
 
   return (
@@ -60,14 +83,17 @@ const LoginForm = () => {
             )}
           </fieldset>
 
-          <button className="btn border-none shadow-none bg-[#403F3F] rounded-md w-full h-16 text-white text-xl font-semibold">
-            Login
+          <button
+            disabled={loading}
+            className="btn border-none shadow-none bg-[#403F3F] rounded-md w-full h-16 text-white text-xl font-semibold"
+          >
+            {loading ? "Logging in..." : "Login"}
           </button>
         </form>
       </div>
 
       <p className="flex gap-1 items-center font-semibold justify-center">
-        <span className="text-[#706F6F]">Dont’t Have An Account ?</span>
+        <span className="text-[#706F6F]">Don’t Have An Account ?</span>
 
         <Link
           href={"/register"}
