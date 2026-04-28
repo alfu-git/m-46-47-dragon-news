@@ -5,6 +5,7 @@ import FindSection from "@/components/homePage/thirdColumn/FindSection";
 import LoginSection from "@/components/homePage/thirdColumn/LoginSection";
 import QZone from "@/components/homePage/thirdColumn/QZone";
 import { getAllCategory, getNewsByCategoryId } from "@/lib/dataFetch";
+import BlueBG from "@/components/homePage/thirdColumn/BlueBG";
 
 const PageByCategory = async ({ params }) => {
   const { id } = await params;
@@ -27,6 +28,7 @@ const PageByCategory = async ({ params }) => {
           <LoginSection />
           <FindSection />
           <QZone />
+          <BlueBG />
         </div>
       </div>
     </section>

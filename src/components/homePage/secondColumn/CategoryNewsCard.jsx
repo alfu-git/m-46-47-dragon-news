@@ -7,7 +7,6 @@ import { IoEye } from "react-icons/io5";
 import Link from "next/link";
 
 const CategoryNewsCard = ({ news }) => {
-  console.log(news);
 
   const {
     _id,
@@ -57,13 +56,13 @@ const CategoryNewsCard = ({ news }) => {
           {title}
         </h2>
 
-        <figure className="mb-8">
+        <figure className="mb-8 flex justify-center">
           <Image
             src={image_url}
             width={518}
             height={262}
             alt="News related image"
-            className="object-fill"
+            className="w-full object-fill"
           />
         </figure>
 

@@ -3,7 +3,6 @@ import React from "react";
 import Swimming from "@/assets/swimming.png";
 import Class from "@/assets/class.png";
 import Playground from "@/assets/playground.png";
-import BlueBG from "@/assets/bg.png";
 
 const QZone = () => {
   return (
@@ -39,10 +38,6 @@ const QZone = () => {
             />
           </div>
         </div>
-      </div>
-
-      <div className="flex justify-center">
-        <Image src={BlueBG} width={267} height={509} alt="A blue color bg" />
       </div>
     </div>
   );
