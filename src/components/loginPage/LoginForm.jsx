@@ -3,9 +3,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { authClient } from "@/lib/auth-client";
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
   const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
 
   const {
     register,
@@ -34,6 +37,7 @@ const LoginForm = () => {
 
     if (res) {
       alert("Login Successful!");
+      router.push("/");
     }
   };
 
