@@ -1,8 +1,24 @@
 "use client";
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 
 const RegisterForm = () => {
   const [accepted, setAccepted] = useState(false);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const handleFormSubmit = (data) => {
+    if (!accepted) {
+      alert("Please accept Terms & Conditions");
+      return;
+    }
+
+    console.log(data);
+  };
 
   return (
     <div className="px-4 pt-10 sm:pt-15 pb-5 lg:w-188 lg:mx-auto lg:p-19 bg-white rounded-md shadow">
@@ -11,7 +27,7 @@ const RegisterForm = () => {
       </h4>
 
       <div className="pt-12.5 mb-7.5 px-3 lg:px-6 border-t border-[#E7E7E7]">
-        <form>
+        <form onSubmit={handleSubmit(handleFormSubmit)}>
           {/* name */}
           <fieldset className="fieldset mb-6">
             <legend className="fieldset-legend mb-3.75 text-[#403F3F] text-xl font-semibold">
@@ -20,11 +36,14 @@ const RegisterForm = () => {
 
             <input
               type="text"
-              name="name"
+              {...register("name", { required: "Name field is required" })}
               className="input w-full h-16 p-5 bg-[#F3F3F3] border-none rounded-md placeholder:text-[#9F9F9F]"
               placeholder="Enter your name"
             />
-            <p className="label">Optional</p>
+
+            {errors.name && (
+              <p className="label text-red-500">{errors.name.message}</p>
+            )}
           </fieldset>
 
           {/* photo url */}
@@ -35,11 +54,10 @@ const RegisterForm = () => {
 
             <input
               type="url"
-              name="photo-url"
+              {...register("photo-url")}
               className="input w-full h-16 p-5 bg-[#F3F3F3] border-none rounded-md placeholder:text-[#9F9F9F]"
               placeholder="Enter your photo url"
             />
-            <p className="label">Optional</p>
           </fieldset>
 
           {/* email */}
@@ -50,11 +68,14 @@ const RegisterForm = () => {
 
             <input
               type="email"
-              name="email"
+              {...register("email", { required: "Email field is required" })}
               className="input w-full h-16 p-5 bg-[#F3F3F3] border-none rounded-md placeholder:text-[#9F9F9F]"
               placeholder="Enter your email"
             />
-            <p className="label">Optional</p>
+
+            {errors.email && (
+              <p className="label text-red-500">{errors.email.message}</p>
+            )}
           </fieldset>
 
           {/* password */}
@@ -65,11 +86,16 @@ const RegisterForm = () => {
 
             <input
               type="password"
-              name="password"
+              {...register("password", {
+                required: "Password field is required",
+              })}
               className="input w-full h-16 p-5 bg-[#F3F3F3] border-none rounded-md placeholder:text-[#9F9F9F]"
               placeholder="Enter your password"
             />
-            <p className="label">Optional</p>
+
+            {errors.password && (
+              <p className="label text-red-500">{errors.password.message}</p>
+            )}
           </fieldset>
 
           {/* checkbox */}
