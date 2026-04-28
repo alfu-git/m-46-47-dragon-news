@@ -5,7 +5,7 @@ import { format } from "date-fns";
 
 const Header = () => {
   return (
-    <section className="mt-12.5 mb-7.5">
+    <section className="mt-12.5 mb-7.5 container mx-auto px-5">
       <div className="flex flex-col justify-center items-center">
         <div className="mb-5">
           <Image

@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const CareerPage = () => {
-  return <div>Career Page</div>;
+  return <section className="container mx-auto px-5">Career Page</section>;
 };
 
 export default CareerPage;

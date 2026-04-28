@@ -28,7 +28,7 @@ const NewsDetails = async ({ params }) => {
 
   const news = await getNewsById(id);
   return (
-    <section className="mb-20">
+    <section className="mb-20 container mx-auto px-5">
       <div className="grid grid-cols-12 gap-6">
         <div className="col-span-9">
           <h5 className="mb-5 text-[#403F3F] text-xl font-semibold">

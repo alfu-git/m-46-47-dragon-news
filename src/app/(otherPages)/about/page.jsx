@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 const AboutPage = () => {
-  return <div>About Page</div>;
+  return <section className="container mx-auto px-5">About Page</section>;
 };
 
 export default AboutPage;

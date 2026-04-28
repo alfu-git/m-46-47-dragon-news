@@ -26,7 +26,7 @@ const PageByCategory = async ({ params }) => {
   const newsByCategory = await getNewsByCategoryId(id);
 
   return (
-    <section className="mt-18">
+    <section className="mt-18 container mx-auto px-5">
       <div className="grid gap-6 grid-cols-12">
         <div className="col-span-3">
           <AllCategory allCategory={allCategory} activeId={id} />

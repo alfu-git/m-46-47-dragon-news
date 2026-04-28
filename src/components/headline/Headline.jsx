@@ -13,23 +13,25 @@ const headlineNews = [
 
 const Headline = () => {
   return (
-    <section className="p-4 bg-[#F3F3F3]">
-      <div className="flex gap-5 items-center">
-        <button className="btn border-none shadow-none bg-[#D72050] lg:px-6 lg:h-12 text-xl text-white font-medium">
-          Latest
-        </button>
+    <section className="container mx-auto px-5">
+      <div className="p-4 bg-[#F3F3F3]">
+        <div className="flex gap-5 items-center">
+          <button className="btn border-none shadow-none bg-[#D72050] lg:px-6 lg:h-12 text-xl text-white font-medium">
+            Latest
+          </button>
 
-        <Marquee pauseOnHover={true}>
-          {headlineNews.map((news) => (
-            <div
-              key={news.id}
-              className="flex gap-5 text-lg text-[#403F3F] font-semibold"
-            >
-              <p>{news.title}</p>
-              <span className="mr-5">|</span>
-            </div>
-          ))}
-        </Marquee>
+          <Marquee pauseOnHover={true}>
+            {headlineNews.map((news) => (
+              <div
+                key={news.id}
+                className="flex gap-5 text-lg text-[#403F3F] font-semibold"
+              >
+                <p>{news.title}</p>
+                <span className="mr-5">|</span>
+              </div>
+            ))}
+          </Marquee>
+        </div>
       </div>
     </section>
   );

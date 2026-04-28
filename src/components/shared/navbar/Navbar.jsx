@@ -2,12 +2,13 @@ import React from "react";
 import Image from "next/image";
 import UserLogo from "@/assets/user.png";
 import NavLink from "./NavLink";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <section className="mt-5">
+    <section className="mt-5 container mx-auto px-5">
       <div>
-        <div className="navbar bg-base-100">
+        <div className="navbar">
           <div className="navbar-start">
             <div className="dropdown">
               <div
@@ -57,9 +58,11 @@ const Navbar = () => {
                 className="w-10 h-10"
               />
 
-              <button className="btn border-none shadow-none bg-[#403F3F] sm:px-10 h-11 text-white text-lg sm:text-xl font-semibold">
-                Login
-              </button>
+              <Link href={"/login"}>
+                <button className="btn border-none shadow-none bg-[#403F3F] sm:px-10 h-11 text-white text-lg sm:text-xl font-semibold">
+                  Login
+                </button>
+              </Link>
             </div>
           </div>
         </div>

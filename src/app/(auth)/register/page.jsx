@@ -1,10 +1,13 @@
-import React from 'react';
+import RegisterForm from "@/components/registerPage/RegisterForm";
+import React from "react";
 
 const RegisterPage = () => {
   return (
-    <div>
-      Register page
-    </div>
+    <section className="my-20 container mx-auto px-5 min-h-screen">
+      <div>
+        <RegisterForm />
+      </div>
+    </section>
   );
 };
 
